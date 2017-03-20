@@ -5,7 +5,7 @@ const mutations = {
     state.userInfo = payload
   },
   [types.SUCCESS_GET_ISSUES] (state, payload) {
-    state.push(...payload)
+    state.issues.push(...payload)
   }
 }
 
