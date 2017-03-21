@@ -1,31 +1,20 @@
 <template lang="jade">
 #app
+  header-component
+  router-view
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import HeaderComponent from 'components/HeaderComponent'
 export default {
   name: 'app',
-  computed: {
-    ...mapState(['userInfo'])
-  },
-  methods: {
-    ...mapActions(['getUserInfo', 'getIssues'])
-  },
-  created () {
-    this.getUserInfo()
-    this.getIssues()
-  }
+  components: {HeaderComponent}
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./sass/base";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0 r(30);
 }
 </style>

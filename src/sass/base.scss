@@ -1,0 +1,35 @@
+@import "reset";
+@import "subimport";
+
+.loading {
+  background: url('./assets/loading.svg') no-repeat center;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.router-link-active {
+  color: $primary-color-text;
+  background-color: $accent-color;
+}
+.one-line {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.two-line {
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.ts {
+  text-shadow: 0 r(2) r(2) #a87e47;
+}
+.bs {
+  box-shadow: 0 r(5) r(10) rgba(black, .15);
+}
