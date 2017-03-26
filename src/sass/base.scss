@@ -1,6 +1,11 @@
 @import "reset";
 @import "subimport";
+@import "font";
 
+
+.hidden {
+  display: none;
+}
 .loading {
   background: url('./assets/loading.svg') no-repeat center;
 }
