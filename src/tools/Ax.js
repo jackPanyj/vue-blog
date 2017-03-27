@@ -6,7 +6,7 @@ const Ax = Axios.create({
 
 Ax.interceptors.request.use(config => {
   if (config.url.includes('issues')) {
-    return Object.assign(config, {params: new URLSearchParams('per_page=8')})
+    return Object.assign({}, config, {params: new URLSearchParams('per_page=8')})
   }
   return config
 })

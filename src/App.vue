@@ -1,7 +1,8 @@
 <template lang="jade">
 #app
   header-component
-  router-view
+  keep-alive
+    router-view
 </template>
 
 <script>
@@ -14,7 +15,4 @@ export default {
 
 <style lang="scss">
 @import "./sass/base";
-#app {
-  padding: 0 r(30);
-}
 </style>
