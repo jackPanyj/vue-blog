@@ -1,10 +1,10 @@
 <template lang="jade">
 div
   div.blogs
-    div.card.bs(v-for="issue in issues")
+    router-link.card.bs(v-for="issue in issues", :to="{name: 'blog', params: {id: issue.number}}")
       .title.one-line {{issue.title}}
       .two-line.sub {{issue.plainBody}}
-    .small-loading(ref="loadingFlag")
+    .small-loading(ref="loadingFlag" v-show="issues.loaded")
 
   div.loading(v-show="!issues.loaded")
 </template>
@@ -21,12 +21,13 @@ export default {
   },
   computed: mapState(['issues']),
   methods: mapActions(['getIssues']),
-  created () {
+  deactivated () {
+    window.onscroll = null
+  },
+  activated () {
     this.getIssues()
     window.onscroll = () => {
-      if (isElementInViewport(this.$refs.loadingFlag)) {
-        this.getIssues({page: ++this.page})
-      }
+      if (isElementInViewport(this.$refs.loadingFlag)) this.getIssues({page: ++this.page})
     }
   }
 }
