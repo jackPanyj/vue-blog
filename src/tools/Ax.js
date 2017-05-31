@@ -1,11 +1,7 @@
 import Axios from 'axios'
 
 const Ax = Axios.create({
-  baseURL: 'https://api.github.com',
-  auth: {
-    username: 'jackpanyj',
-    password: ''
-  }
+  baseURL: 'https://api.github.com'
 })
 
 Ax.interceptors.response.use(res => {

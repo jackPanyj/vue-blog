@@ -1,7 +1,7 @@
 <template lang="jade">
 div
   div.blogs
-    router-link.card.bs(v-for="issue in issues", :to="{name: 'blog', params: {id: issue.number}}")
+    router-link.card.bs(v-for="(issue, i) in issues", :to="{name: 'blog', params: {id: issue.number}}", :key='i')
       .title.one-line {{issue.title}}
       .two-line.sub {{issue.plainBody}}
     .small-loading(ref="loadingFlag" v-show="issues.loaded")
