@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/github-markdown-css/2.4.0/github-markdown.min.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript">
       function initRootFontSize () {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
+        const clientWidth = document.documentElement.clientWidth > 800 ? 800 : document.documentElement.clientWidth
+        document.documentElement.style.fontSize = clientWidth / 20 + 'px'
       }
       initRootFontSize()
       window.onresize = initRootFontSize

@@ -15,4 +15,8 @@ export default {
 
 <style lang="scss">
 @import "./sass/base";
+#app {
+  max-width: 800px;
+  margin: auto;
+}
 </style>
