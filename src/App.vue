@@ -11,6 +11,7 @@ export default {
   name: 'app',
   components: {HeaderComponent}
 }
+
 </script>
 
 <style lang="scss">
